@@ -1,0 +1,8 @@
+/home/simon/dev/pets/Pets/Pets.Infrastructure.Interfaces/bin/Debug/netcoreapp2.0/Pets.Infrastructure.Interfaces.deps.json
+/home/simon/dev/pets/Pets/Pets.Infrastructure.Interfaces/bin/Debug/netcoreapp2.0/Pets.Infrastructure.Interfaces.dll
+/home/simon/dev/pets/Pets/Pets.Infrastructure.Interfaces/bin/Debug/netcoreapp2.0/Pets.Infrastructure.Interfaces.pdb
+/home/simon/dev/pets/Pets/Pets.Infrastructure.Interfaces/obj/Debug/netcoreapp2.0/Pets.Infrastructure.Interfaces.csproj.CoreCompileInputs.cache
+/home/simon/dev/pets/Pets/Pets.Infrastructure.Interfaces/obj/Debug/netcoreapp2.0/Pets.Infrastructure.Interfaces.AssemblyInfoInputs.cache
+/home/simon/dev/pets/Pets/Pets.Infrastructure.Interfaces/obj/Debug/netcoreapp2.0/Pets.Infrastructure.Interfaces.AssemblyInfo.cs
+/home/simon/dev/pets/Pets/Pets.Infrastructure.Interfaces/obj/Debug/netcoreapp2.0/Pets.Infrastructure.Interfaces.dll
+/home/simon/dev/pets/Pets/Pets.Infrastructure.Interfaces/obj/Debug/netcoreapp2.0/Pets.Infrastructure.Interfaces.pdb
