@@ -4,6 +4,8 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.ServiceBus;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using PetRegistry.webjob.Infrastructure;
+using Pets.Infrastructure.Interfaces.Repositories;
 
 namespace PetRegistry.webjob
 {
@@ -55,6 +57,7 @@ namespace PetRegistry.webjob
             //serviceCollection.AddScoped<ISomeInterface, SomeUsefulClass>();
             // Your classes that contain the webjob methods need to be DI-ed up too
             serviceCollection.AddScoped<WebjobApi, WebjobApi>();
+            serviceCollection.AddScoped<IPetsRepository, PetsRepository>();
 
         }
     }

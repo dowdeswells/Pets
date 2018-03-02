@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
+using PetRegistry.webapi.DependencyInjection;
 using SQLitePCL;
 
 namespace PetRegistry.webapi
@@ -17,6 +18,7 @@ namespace PetRegistry.webapi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            RegistrationSetup.RegisterDependencies(services);
             services.AddCors();
             services.AddMvc(options =>
             {

@@ -14,18 +14,13 @@ namespace PetRegistry.webjob.Infrastructure
         private const string PetsCollection = "Pets";
         
         
-        private DocumentClient _client;
 
-        private void Init()
-        {
-            _client = new DocumentClient(new Uri(EndpointUri), PrimaryKey);
-
-        }
 
         public async Task Add(Pet pet)
         {
+            var client = new DocumentClient(new Uri(EndpointUri), PrimaryKey);
             var petsCollectionUri = UriFactory.CreateDocumentCollectionUri(PetsDb, PetsCollection);
-            var docResponse = await _client.CreateDocumentAsync(petsCollectionUri, pet);
+            var docResponse = await client.CreateDocumentAsync(petsCollectionUri, pet);
         }
     }
 }

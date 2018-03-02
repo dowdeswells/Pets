@@ -1,4 +1,9 @@
-﻿using Microsoft.Azure.WebJobs;
+﻿using System;
+using System.Text;
+using Microsoft.Azure.ServiceBus;
+using Microsoft.Azure.ServiceBus.InteropExtensions;
+using Microsoft.Azure.WebJobs;
+using Newtonsoft.Json;
 using PetRegistry.webjob.Infrastructure;
 using Pets.Infrastructure.Interfaces.Messaging;
 using Pets.Infrastructure.Interfaces.Repositories;
@@ -17,8 +22,25 @@ namespace PetRegistry.webjob
             _petsRepository = petsRepository;
         }
         
-        public void CreatePet([ServiceBusTrigger(CreatePetQueue)] CreatePetCommand cmd)
+        public void ProcessQueueMessage([ServiceBusTrigger(CreatePetQueue)] Message message)
         {
+            try
+            {
+                CreatePet(message);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        private void CreatePet(Message message)
+        {
+            var bytes = message.Body;
+            var json = Encoding.UTF8.GetString(bytes);
+            var cmd = JsonConvert.DeserializeObject<CreatePetCommand>(json);
+
             Pet pet = new Pet
             {
                 Id = cmd.NewPetId,
@@ -29,6 +51,5 @@ namespace PetRegistry.webjob
             };
             _petsRepository.Add(pet);
         }
-        
     }
 }
